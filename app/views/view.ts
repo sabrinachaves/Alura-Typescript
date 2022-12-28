@@ -1,5 +1,5 @@
-export abstract class View<T> {
-  protected elemento: HTMLElement;
+export abstract class View<T> { //abstract: a classe não pode ser instanciada
+  protected elemento: HTMLElement; //protected: só as próprias classes ou as filhas podem acessar os métodos
 
   constructor(seletor: string) {
     this.elemento = document.querySelector(seletor);
@@ -10,5 +10,5 @@ export abstract class View<T> {
     this.elemento.innerHTML = template;
   }
 
-  abstract template(model: T): string;
+  abstract template(model: T): string; //abstract: responsabilidade das classes filhas
 }
